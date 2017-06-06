@@ -1,3 +1,4 @@
+//promise 1
 var p1 = axios.get(api_url);
 var p2 = axios.get(api_url);
 var p3 = axios.get(api_url);
@@ -11,3 +12,27 @@ Promise.all([p1, p2, p3, p4, p5])
     console.log(responses[3].data);
     console.log(responses[4].data);
   });
+
+// chaining
+
+
+// resolve reject
+var p = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    resolve('Hello');
+  }, 3000);
+});
+p.then(function (value) {
+  console.log('DONE: ', value);
+})
+ .catch(function(error){
+   console.error('ERROR', error)
+ });
+
+ addNumbers(x, y)
+   .then(function (answer) {
+     console.log(answer);
+   })
+   .catch(function (error) {
+     console.log(error);
+   });
